@@ -38,6 +38,13 @@ def main():
                 print("Game over!")
                 exit()
 
+        for roid in asteroids:
+            for bullet in shots:
+                if roid.collision(bullet):
+                    roid.split()
+                    bullet.kill()
+
+                
         screen.fill((0, 0, 0))
         # player.draw(screen)
         for thing in drawable:
